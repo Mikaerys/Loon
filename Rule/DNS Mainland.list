@@ -1,0 +1,47 @@
+# NAME: DNS Mainland
+# AUTHOR: Mikaerys
+# UPDATED: 2025-06-06 09:18:50
+# HOST: 15
+# IP-CIDR: 12
+# TOTAL: 27
+
+# AliDNS
+HOST,dns.alidns.com,DNS
+IP-CIDR,223.5.5.5/32,DNS
+IP-CIDR,223.6.6.6/32,DNS
+
+# DNSPod / Tencent
+HOST,doh.pub,DNS
+HOST,sm2.doh.pub,DNS
+IP-CIDR,119.29.29.29/32,DNS
+IP-CIDR,119.29.107.85/32,DNS
+IP-CIDR,118.89.110.78/32,DNS
+
+# OneDNS
+HOST,doh.onedns.net,DNS
+HOST,dot.onedns.net,DNS
+HOST,doh-pure.onedns.net,DNS
+HOST,dot-pure.onedns.net,DNS
+
+# Rubyfish
+HOST,dns.rubyfish.cn,DNS
+HOST,rubyfish.cn,DNS
+
+# 233py
+HOST,edns.233py.com,DNS
+HOST,i.233py.com,DNS
+HOST,sdns.233py.com,DNS
+
+# 114DNS
+IP-CIDR,114.114.114.114/32,DNS
+
+# 其他大陆 DNS
+HOST,dns.cfiec.net,DNS
+HOST,dns.ipv6dns.com,DNS
+HOST,jcdns.fun,DNS
+IP-CIDR,117.50.22.22/32,DNS
+IP-CIDR,220.248.179.9/32,DNS
+IP-CIDR,47.96.179.163/32,DNS
+IP-CIDR,52.80.66.66/32,DNS
+IP-CIDR,58.20.127.170/32,DNS
+IP-CIDR,58.20.127.238/32,DNS
