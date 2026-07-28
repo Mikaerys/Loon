@@ -1,0 +1,48 @@
+# NAME: WifiCall
+# AUTHOR: ChatGPT
+# DESCRIPTION: Wi-Fi Calling (UK IMS / Giffgaff / O2 / Vodafone)
+# UPDATED: 2026-07-28
+
+##############################
+# Apple Carrier Detection
+##############################
+
+DOMAIN-SUFFIX,gsp1-ssl.ls.apple.com
+DOMAIN-SUFFIX,carrier.apple.com
+
+##############################
+# Giffgaff / O2 UK ePDG
+##############################
+
+DOMAIN-SUFFIX,epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ss.epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ss.epdg.epc.geo.mnc015.mcc234.pub.3gppnetwork.org
+
+##############################
+# Vodafone UK
+##############################
+
+DOMAIN-SUFFIX,entsrv-uk.vodafone.com
+DOMAIN-SUFFIX,vuk-gto.prod.ondemandconnectivity.com
+
+##############################
+# IMS
+##############################
+
+DOMAIN-KEYWORD,epdg
+DOMAIN-KEYWORD,ims
+
+##############################
+# Optional
+##############################
+
+DOMAIN-SUFFIX,giffgaff.com
+DOMAIN-SUFFIX,o2.co.uk
+
+##############################
+# IP
+##############################
+
+IP-CIDR,87.194.0.0/16,no-resolve
+IP-CIDR,88.82.0.0/19,no-resolve
+IP-CIDR,46.68.0.0/17,no-resolve
