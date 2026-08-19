@@ -1,0 +1,40 @@
+#!name = 古诗文网 VIP 解锁
+#!desc = 解锁古诗文网本地 VIP 标识与相关权益（单文件内联版）
+#!icon = https://raw.githubusercontent.com/kwsch/PKHeX/master/PKHeX.WinForms/Resources/app.ico
+#!author = Custom
+#!homepage = https://github.com
+
+[MITM]
+hostname = *.gushiwen.cn, *.gushiwen.org, api.gushiwen.cn
+
+[Script]
+# 匹配古诗文网用户信息/会员接口，直接使用内联 JavaScript 逻辑
+http-response ^https?:\/\/.*\.gushiwen\.(cn|org)\/.*(user|vip|profile|info|GetUserInfo) script-path=https://raw.githubusercontent.com/LoonWiP/Loon/main/script/blank.js, requires-body=true, tag=古诗文网VIP重写, eval-response='
+let body = $response.body;
+if (body) {
+    try {
+        let obj = JSON.parse(body);
+        const setVipFields = (target) => {
+            if (!target || typeof target !== "object") return;
+            if ("isVip" in target) target.isVip = 1;
+            if ("vip" in target) target.vip = true;
+            if ("is_vip" in target) target.is_vip = 1;
+            if ("vipType" in target) target.vipType = 1;
+            if ("vip_type" in target) target.vip_type = 1;
+            if ("expireTime" in target) target.expireTime = "2099-12-31 23:59:59";
+            if ("vipExpireTime" in target) target.vipExpireTime = "2099-12-31 23:59:59";
+            if ("vip_expire_time" in target) target.vip_expire_time = "2099-12-31 23:59:59";
+        };
+        setVipFields(obj);
+        if (obj.data) {
+            setVipFields(obj.data);
+            if (obj.data.user) setVipFields(obj.data.user);
+            if (obj.data.userInfo) setVipFields(obj.data.userInfo);
+        }
+        body = JSON.stringify(obj);
+    } catch (e) {
+        console.log("古诗文网 JSON 解析异常: " + e);
+    }
+}
+$done({ body });
+'
