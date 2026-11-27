@@ -1,0 +1,11 @@
+#!name = 京东开屏
+#!desc = 拦截京东开屏广告
+#!author = 原作者未注明 · Egern adaptation: ErrBin · Loon conversion: Codex
+#!icon = https://egern.pages.dev/assets/icons/telegram/Aa28413761/yongkelichajianqubudiaojingdong.webp
+#!homepage = https://egern.pages.dev/modules/telegram/Aa28413761/yongkelichajianqubudiaojingdong.yaml
+
+[URL Rewrite]
+^https?:\/\/m\.360buyimg\.com\/mobilecms\/s1125x2436_jfs reject-200
+
+[MITM]
+hostname = m.360buyimg.com
